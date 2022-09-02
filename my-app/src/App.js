@@ -97,10 +97,12 @@ function App() {
           <Counter />
         </div>
         <br />
-        <div className="grid mx-auto border w-75 pl-5 pt-2 pb-2 mb-2">
-          <div className="row mb-2">
+        <div className="display-flex grid mx-auto border w-75 pl-5 pt-2 pb-2">
+          <div className="row mb-6">
             <AgGrid cars={cars} />
           </div>
+          <br />
+          <br />
           <div className="row mb-2">
             <button onClick={fetchAllCars}>Load grid</button>
           </div>
