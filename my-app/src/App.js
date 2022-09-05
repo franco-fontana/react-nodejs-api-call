@@ -8,6 +8,7 @@ import CreateUser from "./components/CreateUser";
 import { getAllUsers, createUser } from "./services/UserService";
 import AgGrid from "./components/AgGrid";
 import Counter from "./components/Counter";
+import PlotlyChart from "./components/PlotlyChart";
 import { getAllCars } from "./services/AgGridService";
 
 function App() {
@@ -40,6 +41,12 @@ function App() {
       setNumberOfUsers(users.length);
     });
   }, []);
+
+  const columnDefs = [
+    { field: "make" },
+    { field: "model" },
+    { field: "price" },
+  ];
 
   const fetchAllCars = () => {
     getAllCars().then((cars) => {
@@ -99,13 +106,17 @@ function App() {
         <br />
         <div className="display-flex grid mx-auto border w-75 pl-5 pt-2 pb-2">
           <div className="row mb-6">
-            <AgGrid cars={cars} />
+            <AgGrid rows={cars} columnDefs={columnDefs} />
           </div>
           <br />
           <br />
           <div className="row mb-2">
             <button onClick={fetchAllCars}>Load grid</button>
           </div>
+        </div>
+        <br />
+        <div className="display-flex grid mx-auto border w-75 pl-5 pt-2 pb-2">
+          <PlotlyChart />
         </div>
       </div>
       <br />

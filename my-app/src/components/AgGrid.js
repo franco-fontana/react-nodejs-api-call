@@ -6,13 +6,8 @@ import "ag-grid-enterprise/dist/styles/ag-grid.css";
 import "ag-grid-enterprise/dist/styles/ag-theme-alpine.css";
 
 function AgGrid(props) {
+  // Two parameters, columnDefs and rows
   const gridRef = useRef();
-
-  const columnDefs = [
-    { field: "make" },
-    { field: "model" },
-    { field: "price" },
-  ];
 
   const defaultColDef = useMemo(
     () => ({
@@ -39,8 +34,8 @@ function AgGrid(props) {
       <AgGridReact
         ref={gridRef}
         onCellClicked={cellClickedListener}
-        rowData={props.cars}
-        columnDefs={columnDefs}
+        rowData={props.rows}
+        columnDefs={props.columnDefs}
         rowSelection="multiple"
         animateRows={true}
         defaultColDef={defaultColDef}
