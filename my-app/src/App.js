@@ -115,7 +115,12 @@ function App() {
           </div>
         </div>
         <br />
-        <div className="display-flex grid mx-auto border w-75 pl-5 pt-2 pb-2">
+        <div
+          className="display-flex grid mx-auto border border-primary shadow w-75 pl-5 pt-2 pb-2"
+          style={{
+            borderRadius: "40px",
+          }}
+        >
           <PlotlyChart />
         </div>
       </div>

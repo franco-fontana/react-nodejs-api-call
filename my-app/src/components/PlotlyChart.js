@@ -25,6 +25,7 @@ function PlotlyChart(props) {
         title: "Plotly.js",
         plot_bgcolor: "GhostWhite",
       }}
+      config={{ displayModeBar: false }}
     />
   );
 }
